@@ -446,13 +446,6 @@ $('#swbtn').addEventListener('click', e => {
   applySwatch(next, r.left+r.width/2, r.top+r.height/2);
 });
 
-/* ---------- copy email ---------- */
-$('#copy').addEventListener('click', () => {
-  const v = $('#email').textContent;
-  const sel = () => { const r=document.createRange(); r.selectNodeContents($('#email')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); toast('Selected, press copy'); };
-  try { navigator.clipboard.writeText(v).then(()=>toast('Copied! talk soon'), sel); } catch(e){ sel(); }
-});
-
 /* ---------- reveals (visible at rest) ---------- */
 function observeReveals(){
   const heads = $$('[data-page]:not([hidden]) .head');
